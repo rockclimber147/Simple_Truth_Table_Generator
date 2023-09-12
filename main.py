@@ -2,13 +2,7 @@ def generate_truth_table():
     """
     Generates a truth table based on parameters prompted from the user. The user is prompted for the number of variables
     they wish to use, and for the equation(s) they want to generate a truth table for. Results are displayed using 1 for
-    True and 0 for False. For example:
-
-    3 variables chosen
-    3 functions chosen
-
-
-
+    True and 0 for False.
     :return: void
     """
     # Validate user input
