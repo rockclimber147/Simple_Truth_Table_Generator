@@ -22,38 +22,38 @@ out_2 =  a and (b or c)
 out_3 =  (a and b) or c
 
 a   b   c | out_1 out_2 out_3 
-1   1   1     1     1     1 
-1   1   0     1     1     1 
-1   0   1     1     1     1 
-1   0   0     0     0     0 
-0   1   1     1     0     1 
-0   1   0     0     0     0 
-0   0   1     1     0     1 
 0   0   0     0     0     0 
+0   0   1     1     0     1 
+0   1   0     0     0     0 
+0   1   1     1     0     1 
+1   0   0     0     0     0 
+1   0   1     1     1     1 
+1   1   0     1     1     1 
+1   1   1     1     1     1 
 ```
 Comparing basic logic gates
 ```text
-out_1 =  a and b
-out_2 =  a or b
-out_3 =  not (a and b) and (a or b) # XOR gate (one or the other but not both)
+out_1 =  a and b                    # AND gate
+out_2 =  a or b                     # OR  gate
+out_3 =  not (a and b) and (a or b) # XOR gate (exclusive OR: one or the other but not both)
 
-a   b | out_1 out_2 out_3
-1   1     1     1     0
-1   0     0     1     1
-0   1     0     1     1
-0   0     0     0     0
+a   b | out_1 out_2 out_3 
+0   0     0     0     0 
+0   1     0     1     1 
+1   0     0     1     1 
+1   1     1     1     0 
 ```
 Boolean Multiplexor
 ```text
 out_1 =  (not a and c) or (a and b) # MULTIPLEXOR (outputs b when a == 1, c when a == 0)
 
-a   b   c | out_1
-1   1   1     1
-1   1   0     1
-1   0   1     0
-1   0   0     0
-0   1   1     1
-0   1   0     0
-0   0   1     1
-0   0   0     0
+a   b   c | out_1 
+0   0   0     0     
+0   0   1     1     
+0   1   0     0     
+0   1   1     1     
+1   0   0     0     
+1   0   1     0     
+1   1   0     1     
+1   1   1     1     
 ```
