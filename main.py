@@ -58,13 +58,13 @@ if var_amount == 2:
     while count < 2 ** var_amount:
         # Cover every combination of a and b, a flips halfway through and b flips every time
         if count < 2 ** (var_amount - 1):
-            a = 1
-        else:
             a = 0
-        if count % 2 == 0:
-            b = 1
         else:
+            a = 1
+        if count % 2 == 0:
             b = 0
+        else:
+            b = 1
 
         # Print results from this arrangement of variables then iterate count variable.
         print(a, ' ', b, '   ', int(eval(function_1)),  end='     ')
@@ -86,26 +86,26 @@ elif var_amount == 3:
     print('')
 
     # set up some variables to flip-flop the value of b in truth table format
-    b = 0
-    parity_b = 1
+    b = 1
+    parity_b = -1
 
     while count < 2 ** var_amount:
         # Cover every combination of a, b and c
 
         # a flips halfway through
         if count < 2 ** (var_amount - 1):
-            a = 1
-        else:
             a = 0
+        else:
+            a = 1
         # b flips every 2 times
         if count % 2 == 0:
             b += parity_b
             parity_b = parity_b * -1
         # c flips every time
         if count % 2 == 0:
-            c = 1
-        else:
             c = 0
+        else:
+            c = 1
         # Print the values of the variables and the results from the function, so they line up with the template
         print(a, ' ', b, ' ', c, '   ', int(eval(function_1)),  end='     ')
         if function_amount >= 2:
@@ -124,17 +124,17 @@ else:
     print('')
 
     # b and c will flip every second and fourth count, keep track of parities individually
-    b = 0
-    parity_b = 1
-    c = 0
-    parity_c = 1
+    b = 1
+    parity_b = -1
+    c = 1
+    parity_c = -1
 
     while count < 2 ** var_amount:
         # a flips halfway through
         if count < 2 ** (var_amount - 1):
-            a = 1
-        else:
             a = 0
+        else:
+            a = 1
         # b flips every 4 counts
         if count % 4 == 0:
             b += parity_b
@@ -145,9 +145,9 @@ else:
             parity_c = parity_c * -1
         # d flips every time
         if count % 2 == 0:
-            d = 1
-        else:
             d = 0
+        else:
+            d = 1
 
         # Print results from this arrangement of variables then iterate count variable.
         print(a, ' ', b, ' ', c, ' ', d, '   ', int(eval(function_1)),  end='     ')
